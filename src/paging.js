@@ -1,19 +1,7 @@
-
 /*
- *  paging({
- *      current: 3,
- *      total: 10,
- *      max: 5
- *  })
+ * @author eden lane <edencore@gmail.com>
  */
-
-/*
- *  @param {object} params
- *      current: current page
- *      total: total count of pages
- *      [max]: count of result pages
- */
-
+ 
 paging = function(params) {
     if (typeof params.current == 'undefined')
         throw new Error("parameter 'current' is required");
