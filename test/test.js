@@ -1,13 +1,6 @@
 var should = require('should'),
     paging = require('../src/paging');
 
-/*
- *  paging({
- *      current: 3,
- *      total: 10,
- *      max: 5
- *  })
- */
 
 describe('WRONG PARAMETERS', function() {
     it('no current parameter', function() {
@@ -29,12 +22,6 @@ describe('WRONG PARAMETERS', function() {
     });
 });
 
-/*
- *  page = {
- *      id: 2,
- *      now: false,
- *  }
- */
 
 describe('PAGING', function() {
     it('current: 3, total: 10', function() {
@@ -98,4 +85,16 @@ describe('PAGING', function() {
             {id: 9, isCurrent: true}
         ]);
     });
+});
+
+describe('ADDING URL', function() {
+    it('adding url to every link', function() {
+        paging({current: 3, total: 5, url: '/blog?page='});
+    }).should.eql([
+        {id: 1, isCurrent: false, url: '/blog?page=1'},
+        {id: 2, isCurrent: false, url: '/blog?page=2'},
+        {id: 3, isCurrent: true, url: '/blog?page=3'},
+        {id: 4, isCurrent: false, url: '/blog?page=4'},
+        {id: 5, isCurrent: false, url: '/blog?page=5'}
+    ]);
 });
