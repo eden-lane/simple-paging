@@ -37,7 +37,7 @@ describe('WRONG PARAMETERS', function() {
  */
 
 describe('PAGING', function() {
-    it('1, 2, (3), 4, 5', function() {
+    it('current: 3, total: 10', function() {
         paging({
             current: 3,
             total: 10
@@ -50,7 +50,7 @@ describe('PAGING', function() {
         ]);
     });
     
-    it('1, 2, (3), 4', function() {
+    it('current:3, total: 4', function() {
         paging({
             current: 3,
             total: 4
@@ -62,7 +62,7 @@ describe('PAGING', function() {
         ]);
     });
     
-    it('1, 2, (3)', function() {
+    it('current: 3, total: 3', function() {
         paging({
             current: 3,
             total: 3
@@ -73,7 +73,7 @@ describe('PAGING', function() {
         ]);
     });
     
-    it('5, 6, (7), 8, 9', function() {
+    it('current: 7, total: 10', function() {
         paging({
             current: 7,
             total: 10
@@ -86,7 +86,7 @@ describe('PAGING', function() {
         ]);
     });
     
-    it('5, 6, 7, 8, (9)', function() {
+    it('current: 9, total: 9', function() {
         paging({
             current: 9,
             total: 9
