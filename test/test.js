@@ -89,12 +89,13 @@ describe('PAGING', function() {
 
 describe('ADDING URL', function() {
     it('adding url to every link', function() {
-        paging({current: 3, total: 5, url: '/blog?page='});
-    }).should.eql([
-        {id: 1, isCurrent: false, url: '/blog?page=1'},
-        {id: 2, isCurrent: false, url: '/blog?page=2'},
-        {id: 3, isCurrent: true, url: '/blog?page=3'},
-        {id: 4, isCurrent: false, url: '/blog?page=4'},
-        {id: 5, isCurrent: false, url: '/blog?page=5'}
-    ]);
+        paging({current: 3, total: 5, url: '/blog?page='})
+        .should.eql([
+            {id: 1, isCurrent: false, url: '/blog?page=1'},
+            {id: 2, isCurrent: false, url: '/blog?page=2'},
+            {id: 3, isCurrent: true, url: '/blog?page=3'},
+            {id: 4, isCurrent: false, url: '/blog?page=4'},
+            {id: 5, isCurrent: false, url: '/blog?page=5'}
+        ]);
+    })
 });

@@ -10,7 +10,8 @@ paging = function(params) {
         
     var current = params.current,
         total = params.total,
-        max = params.max || 5;
+        max = params.max || 5,
+        url = params.url;
     
     var result = [];
         side = Math.floor(max / 2),
@@ -36,6 +37,9 @@ paging = function(params) {
             id: i,
             isCurrent: i == current
         };
+        if (url) {
+            page.url = url + i;
+        }
         result.push(page);
     }
     return result;
