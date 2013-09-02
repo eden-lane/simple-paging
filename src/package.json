@@ -1,0 +1,22 @@
+{
+    "name": "simple-paging",
+    "version": "1.0.0",
+    "description": "Simple paging system",
+    "keywords": ["paging"],
+    "bugs": {
+        "url": "https://github.com/edencore/simple-paging/issues"
+    },
+    "author": {
+        "name": "eden lane",
+        "email": "edencore@gmail.com"
+    },
+    "files": [
+        "/test",
+        "paging.js"
+    ],
+    "main": "paging.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/edencore/simple-paging.git"
+    }
+}
