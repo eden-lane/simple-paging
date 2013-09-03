@@ -7,16 +7,21 @@ paging = function(params) {
         throw new Error("parameter 'current' is required");
     if (typeof params.total == 'undefined')
         throw new Error("parameter 'total' is required");
+    
+    var result = {};
         
     var current = params.current,
         total = params.total,
         max = params.max || 5,
-        url = params.url;
+        url = params.url || false,
+        showFirst = params.showFirst,
+        showLast = params.showLast;
     
-    var result = [];
-        side = Math.floor(max / 2),
+    var side = Math.floor(max / 2),
         start = current - side,
         finish = current + side;
+    
+    result.pages = [];
     
     var d = finish - total;
 	if (d > 0) {
@@ -40,8 +45,23 @@ paging = function(params) {
         if (url) {
             page.url = url + i;
         }
-        result.push(page);
+        result.pages.push(page);
     }
+    
+    if (showFirst && start > 1) {
+        result.first = {id: 1, isCurrent: false};
+        if (url)
+            result.first.url = url + 1;
+    } else
+        result.first = false;
+        
+    if (showLast && finish < total) {
+        result.last = {id: total, isCurrent: false};
+        if (url)
+            result.last.url = url + total;
+    } else
+        result.last = false;
+    
     return result;
 };
 
