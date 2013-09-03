@@ -8,9 +8,9 @@ var pages = paging({
     total: 23,
     // url that will be added before every link
     url: '/blog?page=',
-    // if true will return {Page} object for first page
+    // if true will return {Page} object for the first page
     showFirst: true,
-    // if true will return {Page} object for last page
+    // if true will return {Page} object for the last page
     showLast: true
 });
 ```
