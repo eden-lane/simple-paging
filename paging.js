@@ -11,7 +11,7 @@ paging = function(params) {
     var result = {};
         
     var current = params.current,
-        total = params.total,
+        total = Math.ceil(params.total),
         max = params.max || 5,
         url = params.url || false,
         showFirst = params.showFirst,
