@@ -34,7 +34,7 @@ describe('PAGING', function() {
             {id: 3, isCurrent: true},
             {id: 4, isCurrent: false},
             {id: 5, isCurrent: false}
-        ], first: false, last: false});
+        ], first: false, last: {id: 10, isCurrent: false}});
     });
     
     it('current:3, total: 4', function() {
@@ -70,7 +70,7 @@ describe('PAGING', function() {
             {id: 7, isCurrent: true},
             {id: 8, isCurrent: false},
             {id: 9, isCurrent: false}
-        ], first: false, last: false});
+        ], first: {id: 1, isCurrent: false}, last: {id: 10, isCurrent: false}});
     });
     
     it('current: 9, total: 9', function() {
@@ -83,7 +83,7 @@ describe('PAGING', function() {
             {id: 7, isCurrent: false},
             {id: 8, isCurrent: false},
             {id: 9, isCurrent: true}
-        ], first: false, last: false});
+        ], first: {id: 1, isCurrent: false}, last: false});
     });
 });
 
@@ -114,21 +114,6 @@ describe('FIRST & LAST', function() {
                 ],
                 first: {id: 1, isCurrent: false, url: '/blog?page=1'},
                 last: {id: 10, isCurrent: false, url: '/blog?page=10'}
-            });
-    });
-    
-    it('shouldn`t return first and last pages', function() {
-        paging({current: 3, total: 5, url: '/blog?page=', showFirst: true, showLast: true})
-        .should.eql(
-            {
-                pages: [
-                    {id: 1, isCurrent: false, url: '/blog?page=1'},
-                    {id: 2, isCurrent: false, url: '/blog?page=2'},
-                    {id: 3, isCurrent: true, url: '/blog?page=3'},
-                    {id: 4, isCurrent: false, url: '/blog?page=4'},
-                    {id: 5, isCurrent: false, url: '/blog?page=5'}
-                ],
-                first: false, last: false
             });
     });
 });

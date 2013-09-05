@@ -48,14 +48,14 @@ paging = function(params) {
         result.pages.push(page);
     }
     
-    if (showFirst && start > 1) {
+    if (start > 1) {
         result.first = {id: 1, isCurrent: false};
         if (url)
             result.first.url = url + 1;
     } else
         result.first = false;
         
-    if (showLast && finish < total) {
+    if (finish < total) {
         result.last = {id: total, isCurrent: false};
         if (url)
             result.last.url = url + total;
